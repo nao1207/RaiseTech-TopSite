@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@use '../function/base';
+
+/*layout > _header.scss*/
+
+header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    position: fixed;
+    background: white;
+    z-index: 100;
+}
+
+h1 {
+    margin-left: 10%;
+}
+nav {
+    display: block;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    ul li {
+        position: relative;
+        white-space: nowrap;
+    }
+}
+
+.header-section {
+    display: flex;
+}
+.nav-second-label li a {
+    position: relative;
+    padding: 15 60 15 15;
+    height: auto;
+}
+
+.nav-title {
+    padding: 0 10px;
+    a {
+        display: flex;
+        padding: 0 15px;
+        height: 70px;
+        align-items: center;
+        transition: .3m;
+    }
+}
+
+.nav-second-label > li{
+    padding: 10px;
+    
+}
+
+.header-lead-text {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-left: 15px;
+    span{
+        font-size: 1.125rem;
+    }
+    @include base.tablet {
+        display: none;
+    }
+}
+
+.l-header-nav-title {
+    display: flex;
+    li {
+        margin-left: 10px;
+    }
+}
+
+.nav-second-label > a {
+    display: block;
+    a {
+        display: block;
+        background: base.$sub-color;
+        text-align: left;
+    }
+}
+
+.nav-title > a {
+    font-weight: 600;
+}
+/* 受講お申し込み */
+.nav--title {
+    background: base.$main-color;
+    a {
+        color: white;
+        display: flex;
+        padding: 0 15px;
+        height: 70px;
+        align-items: center;
+    }
+}
+
+/*多階層メニュー*/
+
+.nav-second-label > li {
+    display: none;
+}
+
+.nav-title:hover .nav-second-label > li {
+    display: block;
+    background-color: base.$sub-color;
+}
+
+.nav-second-label > a {
+    width: 100%;
+}

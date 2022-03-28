@@ -1,0 +1,57 @@
+/*function > layout.scss*/
+html {
+    font-size: 100%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h3 {
+    font-size: 24px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+main {
+    padding-top: 70px;
+}
+
+img {
+    width: 100%;
+}
+/*レスポンシブ対応*/
+@mixin tablet {
+    @media (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media (max-width: 832px) {
+        @content;
+    }
+}
+
+@mixin smartphone {
+    @media (max-width: 758px) {
+        @content;
+    }
+}
+
+/*カラー変数*/
+$main-color: #2498B3;
+$sub-color: #D4F1F8;

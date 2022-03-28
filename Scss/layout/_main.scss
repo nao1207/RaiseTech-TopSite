@@ -1,0 +1,66 @@
+@use "../function/base";
+
+/* layout > _main.scss */
+
+.TopHed {
+    position: relative;
+    height: 650;
+    overflow: hidden;
+    background: url(../../images/bg-hero3.png);
+    background-repeat: no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* テキスト情報 */
+
+.main__visual__section {
+    z-index: 4;
+    position: absolute;
+    top: 150px;
+    left: 39%;
+    right: 39%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    width: 420px;
+    height: 280px;
+    padding: 20px 30px;
+}
+
+.main__visual__title {
+    width: 75%;
+    height: auto;
+}
+
+.main__visual__text {
+    flex-wrap: wrap;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+button {
+    background: base.$main-color;
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    margin-top: .5rem;
+    a {
+        color: white;
+        font-size: 1.125rem;
+    }
+}
+
+/*@media (max-width: 758px) {
+    main {
+        display: flex;
+    }
+    .main__visual__section {
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+*/
