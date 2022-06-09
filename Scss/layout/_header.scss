@@ -2,112 +2,266 @@
 @use '../function/base';
 
 /*layout > _header.scss*/
-
-header {
+/* header部分のロゴと文言 */
+.Header {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    z-index: 1100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include base.tablet {
+        //position: absolute;
+        height: 50px;
+        width: 100vw;
+        padding-bottom: 0;
+    }
+}
+
+.Header .Header__title {
+    margin: 0 0 0 21px;
+    width: 160px;
+    display: flex;
+    @include base.tablet {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        margin-left: 5px;
+        position: absolute;
+        z-index: 1000;
+    }
+    p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
+
+.Header .Header__title p {
+    strong {
+        font-size: 18px;
+        font-weight: 900;
+    }
+    a {
+    line-height: 1.3;
+    font-weight: 900;
     height: 70px;
     display: flex;
+    align-content: center;
     align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    position: fixed;
-    background: white;
-    z-index: 100;
-}
-
-h1 {
-    margin-left: 10%;
-}
-nav {
-    display: block;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    ul li {
-        position: relative;
+    transition: .3s;
+    }
+    img {
+        width: 160px;
+    }
+    &:link {
+        color: #131D34;
+        color: base.$main-color;
+        text-decoration: none;
+    }
+    span { //最速で｢稼げる｣の文言の設定
+        margin-left: 16px;
         white-space: nowrap;
+        font-size: 14px;
+        @media (max-width: 1280px) {
+            display: none;
+        }
     }
 }
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
 
-.header-section {
+/*------------------------------
+navメニュータイトル
+------------------------------*/
+.Nav__body ul.menu { //.menu
     display: flex;
-}
-.nav-second-label li a {
-    position: relative;
-    padding: 15 60 15 15;
-    height: auto;
-}
-
-.nav-title {
-    padding: 0 10px;
-    a {
-        display: flex;
-        padding: 0 15px;
-        height: 70px;
-        align-items: center;
-        transition: .3m;
+    //height: 70px;コメントアウトしても影響無し
+    align-items: center;
+    @include base.tablet {
+        //flex-direction: column;
+        display: block;//columnをコメントアウトして、desktopのflexを解除
+        text-align: left;
+        background-color: #fff;
+        height: auto;
+        //margin: 0 auto;
+        top: 50px;
     }
 }
 
-.nav-second-label > li{
-    padding: 10px;
-    
+.menu-title {
+    height: 70px;
+    display: flex;
+    &:hover {
+        background-color: base.$sub-color;
+    }
+    >a {
+        font-weight: 700;
+        margin: auto 0;
+        padding: 0 15px;
+    }
+    @include base.tablet {
+        display: block;
+        display: none;
+        //position: relative;
+        //height: 50px;消しても影響無し
+        position: absolute;//これ指定してメニュータイトル下がる成功
+        height: auto;
+        top: 50px;//変な余白を消して、下げることが出来た
+        &:hover{
+            background-color: base.$background-color;
+        }
+    }
 }
 
-.header-lead-text {
-    font-weight: 600;
-    font-size: 0.875rem;
-    margin-left: 15px;
-    span{
-        font-size: 1.125rem;
+/*メニュータイトルの中身*/
+ul.sub-menu.close { //sub-menuの親要素
+    display: none;
+    position: absolute;//メニュータイトルをhoverしてもタイトルが動かなくなった
+    top: 70px;
+    background-color: base.$sub-color;
+    z-index: 1100;
+    @include base.tablet {
+        //position: absolute;コメントアウトするとmenu-titleの下が見切れる
+        //display: block;
+        position: static;
+        top: 10px;
+        background-color: #fff;
+        //height: 100%;
+        height: auto;//これ指定してメニュータイトル下がる成功
+        position: relative;//これ指定してメニュータイトル下がる成功
+    }
+}
+li.menu-item {
+    height: 70px;
+    display: flex;
+    &:hover{
+        background-color: #fff;
+        a {
+            color: base.$main-color;
+        }
+    }
+    a {
+        //text-align: center;
+        margin: auto 40px auto 15px;
+    }
+    @include base.tablet {
+        //position: absolute;
+        display: block;
+        height: auto;
+        z-index: 2000;
+        margin-top: 0;
+        //padding-top: 0;
+        //height: 50px;
+        a {
+            padding-left: 10px;
+            //display: block;意味無し
+        }
+        &:hover {
+            background-color: base.$background-color;
+            a {
+            color: #131D34;
+            }
+        }
+    }
+}
+
+/*.Nav__body ul li.menu-title:hover ul.sub-menu {//4/20コピペ変化無し
+    @include base.tablet {
+    display: block;
+    }
+}
+.Nav__body {//4/20コピペ変化無し
+    @include base.tablet {
+        display: flex;
+    }
+}
+*/
+/*受講申し込みボタン*/
+.Nav__special {
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: base.$main-color;
+    height: 70px;
+    display: flex;
+    a {
+        font-weight: 700;
+        color: #fff;
+        margin: auto 0;
     }
     @include base.tablet {
         display: none;
     }
 }
 
-.l-header-nav-title {
-    display: flex;
-    li {
-        margin-left: 10px;
+/*------------------------------
+jQuery用いたハンバーガーメニューボタン
+------------------------------*/
+.Nav__body ul li {
+    @include base.tablet {
+        position: relative;
+        //top: 50px;これをコメントアウトしたらsub-menu上の変な余白無くなったけど、Nav__bodyが上に上がった
+        background-color: #fff;
+        width: 100vw;
+        padding: 10px 0 10px 0;
     }
 }
 
-.nav-second-label > a {
-    display: block;
-    a {
-        display: block;
-        background: base.$sub-color;
-        text-align: left;
-    }
-}
-
-.nav-title > a {
-    font-weight: 600;
-}
-/* 受講お申し込み */
-.nav--title {
-    background: base.$main-color;
-    a {
-        color: white;
-        display: flex;
-        padding: 0 15px;
-        height: 70px;
-        align-items: center;
-    }
-}
-
-/*多階層メニュー*/
-
-.nav-second-label > li {
+.burger {
     display: none;
+    @include base.tablet {
+        background: url(../images/hamburger_open.svg);
+        height: 50px;
+        width: 50px;
+        z-index: 2000;
+        position: absolute;
+        top: 0;
+        display: block;
+        cursor: pointer;
+        right: 0;
+    }
 }
-
-.nav-title:hover .nav-second-label > li {
-    display: block;
-    background-color: base.$sub-color;
+.burger.close { //アコーディオンが開いている時にハンバーガーボタンをcloseボタンを表示する設定
+    @include base.tablet {
+        background-image: url(../images/hamburger_close.svg);
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        right: 0;
+        display: block;
+        cursor: pointer;
+    }
 }
-
-.nav-second-label > a {
-    width: 100%;
+.Nav__body ul li.close::after { //アコーディオン＋マーク
+    @include base.tablet {
+        content: '';
+        background-image: url(../images/add_black_24dp.svg);
+        height: 50px;
+        width: 38px;//addマークの横の位置調整
+        z-index: 1000;
+        position: absolute;
+        top: 29%;//add垂直位置の調整
+        right: 0;
+        //display: inline-block;
+        //display: flex;
+    }
+}
+.Nav__body ul li.close.add::after { //アコーディオン−マーク
+    @include base.tablet {
+        content: '';
+        background-image: url(../images/horizontal_rule_black_24dp.svg);
+        z-index: 1100;
+        position: absolute;
+        top: 15px;//hoverしたら下に下がっていた不具合を解消した
+        //right: 0;
+        //display: flex;
+        //top: 29%;//add垂直位置の調整
+        //height: 50px;
+        //width: 38px;//−マークの横の位置調整
+        //position: absolute;意味無し
+        //display: inline-block;
+    }
 }

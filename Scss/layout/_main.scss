@@ -1,19 +1,152 @@
 @use "../function/base";
 
-/* layout > _main.scss */
-
-.TopHed {
+/*------------------------------
+layout > _main.scss
+------------------------------*/
+/*メインビジュアル全体の設定と三番目の画像設定*/
+.TopHead {
     position: relative;
-    height: 650;
+    height: 725px;//725px
     overflow: hidden;
-    background: url(../../images/bg-hero3.png);
-    background-repeat: no-repeat center center;
+    display: flex;
+    background: transparent url(../../images/bg-hero3.png) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
+    @media (max-width: 767px) {
+        height: 378px;
+        padding-bottom: 320px;
+        background-position: center -45px;
+        background-size: auto;
+    }
 }
 
-/* テキスト情報 */
+.TopHead__layer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: center;
+}
 
+/*テッくんと男の子の一番上のメインビジュアル*/
+.TopHead__layer1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 130px;
+    background-size: cover;
+    background: transparent url(../../images/bg-hero1.png) no-repeat center top;
+    z-index: 3;
+    @media (max-width: 767px) {
+        align-items: flex-end;
+        background-size: auto 80%; //画像縮小 縦×横
+        background-position: 40% 30%; //表示位置の微調整 横×縦
+    }
+}
+
+/*メインビジュアル二番目*/
+.TopHead__layer2 {
+    z-index: 2;
+    background: url(../../images/bg-hero2.png) no-repeat center center;
+    background-position: center 5%;
+    @media (max-width: 767px) {
+        background-size: auto 85%; //画像の縮小 縦×横　
+        background-position: 40% 40%; //画像の表示位置の微調整
+    }
+}
+
+/*メインビジュアル中央テキスト情報*/
+.TopHead__body {
+    max-width: 530px;
+    border-radius: 10px;
+    padding: 19px 30px;
+    //margin-top: 80px;
+    background-color: #fff;
+    text-align: center;
+    @media (max-width: 767px) {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 0 13px;
+        border-radius: 0;
+        max-height: auto;
+        //padding-top: 0;
+    }
+}
+.TopHead__body p {
+    margin: 1.3em 0 0.5em;
+    font-weight: 600;
+    font-size: 16px;
+    @media (max-width: 767px) {
+        margin: 0.5em 0;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: normal;
+        line-height: 1.7em;
+    }
+}
+/*メインビジュアル内メインカラーボタン*/
+p.Btn {
+    line-height: 1;
+    display: inline-block;
+}
+.TopHead__body p.Btn.Btn--big a {
+    padding: 24px 37px;
+    font-size: 1.125rem;
+    background-color: base.$main-color;
+    border-color: base.$main-color;
+    color: #fff;
+    & link {
+        color: #fff;
+        background-color: base.$main-color;
+        border-color: base.$main-color;
+    }
+    @media (max-width: 767px) {
+        padding: 12px 18px;
+        font-size: 1rem;
+        background-color: base.$main-color;
+        border-color: base.$main-color;
+        margin-top: 0;
+    }
+}
+.Btn a {
+    border-radius: 4px;
+    display: block;
+    font-weight: 700;
+    border: solid 1px #C3C3C3;
+}
+p.Btn {
+    line-height: 1;
+} 
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    img {
+        width: 280px;
+        height: 58.73px;
+    }
+}
+
+/*メインビジュアルのロゴ*/
+.TopHead__title img {
+    width: 280px;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+
+/* テキスト情報 */
+/*
 .main__visual__section {
     z-index: 4;
     position: absolute;

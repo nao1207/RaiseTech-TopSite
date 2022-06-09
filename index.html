@@ -9,98 +9,158 @@
     <!-- css -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="header-section">
-            <div class="header-title">
-                <h1 class="header-logo"><a href="#"><img src="images/header-logo.svg" alt="RaiseTechロゴ"></a></h1>
-            </div><!-- .header-title -->
-            <div class="header-lead">
-                <p class="header-lead-text">最速で<span>「稼げる」</span>プロになる</br>エンジニアリングスクール</p>
-            </div><!-- .header.text -->
-        </div><!-- .header-section -->
-        <nav>
-            <ul class="l-header-nav-title">
-                <li class="nav-title"><a href="">はじめての方へ</a>
-                    <ul class="nav-second-label">
-                        <li><a href="">マンガでわかるRaiseTech</a></li>
-                        <li><a href="">サポート体制</a></li>
-                        <li><a href="">トライヤル受講</a></li>
-                        <li><a href="">就職・転職支援制度</a></li>
-                        <li><a href="">ご利用の流れ</a></li>
+    
+
+    <header class="Header" role="banner"><!-- display: flex; -->
+        <div class="Header__title">
+            <p>
+                <a href="#">
+                    <img src="images/header-logo.svg" alt="RaiseTechロゴ">
+                    <span>
+                        最速で<strong>「稼げる」</strong>プロになる<br>
+                        エンジニアリングスクール
+                    </span>
+                </a>
+            </p>
+        </div><!-- .Header__title -->
+        <div class="Header__link">
+            <div class="Nav">
+                <nav class="Nav__body"><!--style="display: block;"-->
+                    <ul id="menu-global-navi" class="menu">
+                        <li id="menu-item" class="menu-title menu-title1 close">
+                            <a href="">はじめての方へ</a><!-- aとulタグは兄弟関係 -->
+                            <ul class="sub-menu sub-menu1 close">
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">マンガでわかるRaiseTech</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">サポート体制</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">トライヤル受講</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">就職・転職支援制度</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">ご利用の流れ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-item" class="menu-title close">
+                            <a href="">コース案内</a>
+                            <ul class="sub-menu close">
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">マーケティングコース</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">デザインコース</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">WordPress副業コース</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">AWSフルコース</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">AWS自動化コース</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">Javaフルコース</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">Javaフレームワークコース</a>
+                                </li>
+                            </ul>
+                        </li><!-- コース案内 -->
+                        <li id="menu-item" class="menu-title">
+                            <a href="">講師紹介</a>
+                        </li><!-- プルダウン無し -->
+                        <li id="menu-item" class="menu-title close">
+                            <a href="">卒業生の声・実績</a>
+                            <ul class="sub-menu close">
+                                <li  id="menu-item" class="menu-item">
+                                    <a href="">卒業生の声</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">転職・案件実績</a>
+                                </li>
+                            </ul>
+                        </li><!-- 卒業生の声・案件実績 -->
+                        <li id="menu-item" class="menu-title close">
+                            <a href="">メディア</a>
+                            <ul class="sub-menu close">
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">動画一覧</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">掲載記事一覧</a>
+                                </li>
+                            </ul>
+                        </li><!-- メディア -->
+                        <li id="menu-item" class="menu-title close">
+                            <a href="">サポート</a>
+                            <ul class="sub-menu close">
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">よくあるご質問</a>
+                                </li>
+                                <li id="menu-item" class="menu-item">
+                                    <a href="">お問い合わせ</a></li>
+                            </ul>
+                        </li><!-- サポート -->
+                        <li id="menu-item" class="Nav__special">
+                            <a href="">受講お申し込み</a>
+                        </li>
+                        <div class="burger"></div>
                     </ul>
-                </li>
-                <li class="nav-title"><a href="">コース案内</a>
-                    <ul class="nav-second-label">
-                        <li><a href="">マーケティングコース</a></li>
-                        <li><a href="">デザインコース</a></li>
-                        <li><a href="">WordPress副業コース</a></li>
-                        <li><a href="">AWSフルコース</a></li>
-                        <li><a href="">AWS自動化コース</a></li>
-                        <li><a href="">Javaフルコース</a></li>
-                        <li><a href="">Javaフレームワークコース</a></li>
-                    </ul>
-                </li><!-- コース案内 -->
-                <li class="nav-title"><a href="">講師紹介</a></li><!-- プルダウン無し -->
-                <li class="nav-title"><a href="">卒業生の声・実績</a>
-                    <ul class="nav-second-label">
-                        <li><a href="">卒業生の声</a></li>
-                        <li><a href="">転職・案件実績</a></li>
-                    </ul>
-                </li><!-- 卒業生の声・案件実績 -->
-                <li class="nav-title"><a href="">メディア</a>
-                    <ul class="nav-second-label">
-                        <li><a href="">動画一覧</a></li>
-                        <li><a href="">掲載記事一覧</a></li>
-                    </ul>
-                </li><!-- メディア -->
-                <li class="nav-title"><a href="">サポート</a>
-                    <ul class="nav-second-label">
-                        <li><a href="">よくあるご質問</a></li>
-                        <li><a href="">お問い合わせ</a></li>
-                    </ul>
-                </li><!-- サポート -->
-                <li class="nav--title"><a href="">受講お申し込み</a></li>
-            </ul>
-        </nav>
+                </nav>
+            </div><!-- .Nav -->
+        </div><!-- .Header__link -->
     </header>
-    <div class="TopHed">
-        <div class="TopHed__layer TopHed__layer1">
-            <div class="TopHed__body">
-                <h2 class="TopHed__title">
+    <div class="TopHead"><!-- メインビジュアルエリア 相対位置 三枚目の設定CSSで記述-->
+        <div class="TopHead__layer TopHead__layer1">
+            <div class="TopHead__body">
+                <h2 class="TopHead__title">
                     <img src="images/header-logo.svg" alt="RaiseTech">
                 </h2>
                 <p>
-                    "はじめまして。RaiseTech(レイズテック)は"</br>
-                    "最速で「稼げる」エンジニアになるための、"</br>
-                    "実践的なWebエンジニアリングスクールです"
+                    はじめまして。RaiseTech（レイズテック）は<br>
+                    最速で「稼げる」エンジニアになるための、</br>
+                    実践的なWebエンジニアリングスクールです
                 </p>
-                <button><a href="#">マンガでわかるRaiseTech</a></button>
+                <p class="Btn Btn--big Btn--highlight">
+                    <a href="#">マンガでわかるRaiseTech</a>
+                </p>
             </div><!-- .TopHed__body -->
-        </div><!-- .TopHed__layer TopHed__layer1 -->
-            </div><!-- .main__visual__section -->
-        </div><!--.main__visual__content-->
+        </div><!-- .TopHead__layer TopHead__layer1 -->
+        <div class="TopHead__layer TopHead__layer2 rellax"></div>
     </div><!-- .TopHed -->
-    <!--<div class="l__main__secondary">
-        <ul class="p-main__secondary__section">
-            <li class="p-main__secondary__content">
-                <img src="../images/icon1.png" alt="現場主義アイコン">
-                <h3 class="main__secondary--title">現場主義</h3>
-                <p class="main__secondary__text">「プログラミング」だけでは稼げない！現場で求められる「技術」のみ教えます。</p>
-            </li>
-            <li class="p-main__secondary__content">
-                <img src="../images/icon2.png" alt="現役講師アイコン">
-                <h3 class="main__secondary--title">現役講師</h3>
-                <p class="main__secondary__text">「今、求められている技術」をリアルタイムに教えてくれる、現役の技術者だけが講師です。</p>
-            </li>
-            <li class="p-main__secondary__content">
-                <img src="../images/icon3.png" alt="徹底サポートアイコン">
-                <h3 class="main__secondary--title">現場主義</h3>
-                <p class="main__secondary__text">期間中の質疑応答無制限！個別進捗管理！挫折させないサポートを徹底します。</p>
-            </li>
-        </ul>
-    </div><!-- .l__main__secondary -->-->
-    
+    <div class="Sec--black">
+        <div class="l__main__secondary">
+            <ul class="p-main__secondary__section">
+                <li class="p-main__secondary__content">
+                    <img src="../images/icon1.png" alt="現場主義アイコン">
+                    <h3 class="main__secondary--title">現場主義</h3>
+                    <p class="main__secondary__text">「プログラミング」だけでは稼げない！現場で求められる「技術」のみ教えます。</p>
+                </li>
+                <li class="p-main__secondary__content">
+                    <img src="../images/icon2.png" alt="現役講師アイコン">
+                    <h3 class="main__secondary--title">現役講師</h3>
+                    <p class="main__secondary__text">「今、求められている技術」をリアルタイムに教えてくれる、現役の技術者だけが講師です。</p>
+                </li>
+                <li class="p-main__secondary__content">
+                    <img src="../images/icon3.png" alt="徹底サポートアイコン">
+                    <h3 class="main__secondary--title">現場主義</h3>
+                    <p class="main__secondary__text">期間中の質疑応答無制限！個別進捗管理！挫折させないサポートを徹底します。</p>
+                </li>
+            </ul>
+        </div><!-- .l__main__secondary -->
+    </div><!-- .Sec--black -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>

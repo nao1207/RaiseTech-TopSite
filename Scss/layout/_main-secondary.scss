@@ -1,23 +1,60 @@
 /* Scss > layout > _main-secondary.scss */
-/*@use "../function/base";
+@use "../function/base";
+
+.Sec--black {
+    background-color: #000000;
+    padding: 4em 0;
+}
 
 .l__main__secondary {
-    position: absolute;
+    position: relative;
+    margin-top: -263px;
+    justify-content: center; //３つのアイコンセットを画面中央にしている
+    color: #fff;
     z-index: 4;
-    width: 100%;
-    top: 838px;
-    padding-bottom: 3rem;
-    background-position: center;
+    @include base.tablets {
+        margin-top: -263px;
+        justify-content: center; //３つのアイコンセットを画面中央にしている
+        color: #fff;
+        z-index: 4;
+    }
     @include base.smartphone {
-        top: 500px;
+        margin-top: 0;
+        flex-direction: column;
+        display: flex;
     }
 }
 
 .p-main__secondary__content {
-    margin-top: -200px;
-    @include base.smartphone {
-        margin-top: 0px;
+    width: 229px;
+    margin: 0 50px;
+    margin: 0 2%;
+    align-content: center;
+    @media (max-width: 1078px) {
+        margin: 0 2%;
     }
+    @include base.smartphone {
+        margin-bottom: 25px;
+        margin: auto 0;
+    }
+}
+
+p.main__secondary__text {
+    margin: 0.5em 0 0 0;
+    line-height: 1.7;
+    font-weight: 700;
+    text-align: left;
+    @include base.smartphone {
+    }
+}
+
+h3.main__secondary--title {
+    text-align: center;
+    margin: 0.2em 0 0 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    width: auto;
 }
 
 .p-main__secondary__section {
@@ -26,22 +63,6 @@
     @include base.smartphone {
         display: block;
         flex-direction: column;
+        margin: 0 auto;//中央寄せ出来た
     }
 }
-
-.main__secondary--title {
-    color: white;
-    width: auto;
-}
-
-.main__secondary__text {
-    color: white;
-    flex-wrap: overflow-wrap;
-}
-
-.p-main__secondary__content {
-    text-align: center;
-    width: 260px;
-    margin: 30px;
-}
-*/

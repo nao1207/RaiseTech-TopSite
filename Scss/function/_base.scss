@@ -1,14 +1,26 @@
 /*function > layout.scss*/
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
-    font-size: 100%;
-    margin: 0 auto;
-    width: 100%;
+    //font-size: 62.5%;
+    font-family: sans-serif;
+    line-height: 1.15;
+    //font-size: 100%;
 }
 
 body {
-    height: 100%;
-    width: 100%;
-    background: black;
+    line-height: 1.7;
+    //font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif;;
+    //font-size: 1.6rem;
+    color: #121212;
+    margin: 0;
+    //font-weight: 400;
+    text-align: left;
+    background-color: #fff;
+    display: block;
 }
 
 a {
@@ -21,7 +33,7 @@ ul {
 }
 
 h3 {
-    font-size: 24px;
+    //font-size: 20px;
     padding-left: 0;
     padding-right: 0;
 }
@@ -30,12 +42,20 @@ main {
     padding-top: 70px;
 }
 
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
 img {
     width: 100%;
 }
 /*レスポンシブ対応*/
 @mixin tablet {
-    @media (max-width: 1280px) {
+    @media (max-width: 1200px) {
         @content;
     }
 }
@@ -47,7 +67,7 @@ img {
 }
 
 @mixin smartphone {
-    @media (max-width: 758px) {
+    @media (max-width: 767px) {
         @content;
     }
 }
@@ -55,3 +75,4 @@ img {
 /*カラー変数*/
 $main-color: #2498B3;
 $sub-color: #D4F1F8;
+$background-color: #E9F8FB;
